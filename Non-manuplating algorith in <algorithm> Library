@@ -1,0 +1,49 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<numeric>
+using namespace std;
+int main(){
+    vector<int>nums;
+    int size;
+    cout<<"Enter size of vector :";
+    cin>>size;
+    for(int i=0;i<size;i++){
+        cout<<"Enter element to insert is vector :";
+        int element;
+         cin>>element;
+        nums.push_back(element);
+       
+    }
+    sort(nums.begin(),nums.end());
+    for(int i=0;i<nums.size();i++){
+        cout<<nums[i]<<endl;
+    }
+    cout<<"Print as Ascending order ..."<<endl;
+    sort(nums.begin(),nums.end(),greater<int>());
+    for(int i=0;i<nums.size();i++){
+    cout<<nums[i]<<endl;
+    }
+    
+    cout<<"after changing the current order..."<<endl;
+    reverse(nums.begin(),nums.end());
+     for(int i=0;i<nums.size();i++){
+    cout<<nums[i]<<endl;
+    }
+    
+    cout<<"find maximum element in vector.."<<endl;
+    auto max_it=max_element(nums.begin(),nums.end());
+    int max=*max_it;
+    cout<<max<<endl;
+    
+    cout<<"find minimum element in vector..."<<endl;
+    auto min_val=min_element(nums.begin(),nums.end());
+    int min=*min_val;
+    cout<<min<<endl;
+    
+    cout<<"find summation of vector element .."<<endl;
+    auto sum=  accumulate(nums.begin(),nums.end(),0);
+    cout<<sum;
+    
+    return 0;
+}
